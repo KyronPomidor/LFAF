@@ -89,7 +89,7 @@ class Grammar {
 
     String generateString() { ... }
 }
-
+```
 ### The `generateString()` Method
 
 The `generateString()` method:
@@ -114,9 +114,9 @@ It contains:
 - **F** – final states
 
 The constructor converts grammar productions into transitions.
-```
-### Simplified Structure
 
+### Simplified Structure
+```
 class FiniteAutomaton {
     Set<String> Q;
     Set<String> Sigma;
@@ -137,7 +137,7 @@ The method:
 - Accepts the string if the final state is reached
 
 ---
-```
+
 ## Main Class
 
 The `Main` class initializes the grammar and automaton, generates example strings, and checks user input.
