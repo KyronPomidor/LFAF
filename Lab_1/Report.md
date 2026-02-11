@@ -1,8 +1,7 @@
 # Intro to Formal Languages. Regular Grammars. Finite Automata
 
 **Course:** Formal Languages & Finite Automata  
-**Author:** Cretu Dumitru  
-**Acknowledgment:** kudos to Vasile Drumea and Irina Cojuhari  
+**Author:** Kiril Boboc
 
 ---
 
@@ -81,8 +80,7 @@ The `Grammar` class models the formal grammar using sets and maps. It stores:
 It also includes a method that generates a valid string by repeatedly replacing non-terminals using randomly selected production rules until only terminal symbols remain.
 
 ### Simplified Structure
-
-```java
+```
 class Grammar {
     Set<String> VN;
     Set<String> VT;
@@ -116,10 +114,9 @@ It contains:
 - **F** – final states
 
 The constructor converts grammar productions into transitions.
-
+```
 ### Simplified Structure
 
-```java
 class FiniteAutomaton {
     Set<String> Q;
     Set<String> Sigma;
@@ -129,7 +126,7 @@ class FiniteAutomaton {
 
     boolean stringBelongToLanguage(String input) { ... }
 }
-
+```
 ### The `stringBelongToLanguage()` Method
 
 The method:
@@ -140,12 +137,11 @@ The method:
 - Accepts the string if the final state is reached
 
 ---
-
+```
 ## Main Class
 
 The `Main` class initializes the grammar and automaton, generates example strings, and checks user input.
-
-```java
+```
 public static void main(String[] args) {
 
     Grammar grammar = new Grammar(...);
@@ -158,7 +154,7 @@ public static void main(String[] args) {
     String input = scanner.nextLine();
     System.out.println(fa.stringBelongToLanguage(input));
 }
-
+```
 ## Results
 
 The program successfully:
