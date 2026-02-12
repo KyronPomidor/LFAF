@@ -105,6 +105,13 @@ The `generateString()` method:
 
 The `FiniteAutomaton` class represents the automaton derived from the grammar.
 
+A **Finite Automaton (FA)** is a mathematical model used to recognize patterns in strings. It is an abstract machine that reads an input string symbol by symbol and changes its state according to predefined transition rules.
+Finite automata are equivalent to regular grammars and are commonly used in text processing, compilers, and pattern matching.
+
+A finite automaton is formally defined as:
+
+FA = (Q, Σ, δ, q₀, F)
+
 It contains:
 
 1) **Q** – set of states
@@ -185,6 +192,8 @@ Output: `false`
 
 This laboratory work demonstrates the equivalence between regular grammars and finite automata.
 
-The grammar can generate strings, while the finite automaton can recognize them.
+The grammar is capable of generating valid strings, while the finite automaton recognizes and validates them through state transitions.
 
-The implementation confirms the theoretical relationship between the two concepts and provides a solid foundation for further study of formal languages.
+During the implementation, I encountered some difficulties while designing the finite automaton, especially in representing transitions correctly. However, by combining different data structures (such as sets and hash maps) and doing additional research on automaton construction, I was able to successfully complete the realization.
+
+The implementation confirms the theoretical relationship between regular grammars and finite automata and provides a solid foundation for further study of formal languages.
