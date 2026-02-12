@@ -11,9 +11,9 @@ A formal language is a mathematically defined system used to describe structured
 
 A formal language is described using:
 
-- **Alphabet (Σ)** – a finite set of valid symbols  
-- **Vocabulary (Σ\*)** – all possible strings formed using the alphabet  
-- **Grammar (G)** – a set of production rules defining valid strings  
+**Alphabet (Σ)** – a finite set of valid symbols  
+**Vocabulary (Σ\*)** – all possible strings formed using the alphabet  
+**Grammar (G)** – a set of production rules defining valid strings  
 
 A grammar is formally represented as:
 
@@ -21,10 +21,10 @@ G = (Vₙ, Vₜ, P, S)
 
 Where:
 
-- Vₙ – set of non-terminal symbols  
-- Vₜ – set of terminal symbols  
-- P – set of production rules  
-- S – start symbol  
+1) Vₙ – set of non-terminal symbols  
+2) Vₜ – set of terminal symbols  
+3) P – set of production rules  
+4) S – start symbol  
 
 Regular grammars are the simplest type in the Chomsky hierarchy and are equivalent to finite automata. This means that any regular grammar can be transformed into a finite automaton that recognizes the same language.
 
@@ -32,13 +32,13 @@ Regular grammars are the simplest type in the Chomsky hierarchy and are equivale
 
 ## Objectives
 
-- Understand what a formal language is  
-- Identify the components of a grammar  
-- Implement a Regular Grammar  
-- Generate valid strings from the grammar  
-- Convert Grammar into Finite Automaton  
-- Verify whether a string belongs to the language  
-- Organize the project in a GitHub repository  
+1) Understand what a formal language is  
+2) Identify the components of a grammar  
+3) Implement a Regular Grammar  
+4) Generate valid strings from the grammar  
+5) Convert Grammar into Finite Automaton  
+6) Verify whether a string belongs to the language  
+7) Organize the project in a GitHub repository  
 
 ---
 
@@ -54,9 +54,9 @@ Vₜ = {a, b, c, d, f}
 
 Productions:
 
-- S → aS | bD | fR  
-- D → cD | dR | d  
-- R → bR | f  
+1) S → aS | bD | fR  
+2) D → cD | dR | d  
+3) R → bR | f  
 
 Start symbol:
 
@@ -72,10 +72,10 @@ This grammar is a **right-linear grammar**, therefore it is a **regular grammar*
 
 The `Grammar` class models the formal grammar using sets and maps. It stores:
 
-- Non-terminals
-- Terminals
-- Production rules
-- Start symbol
+1) Non-terminals
+2) Terminals
+3) Production rules
+4) Start symbol
 
 It also includes a method that generates a valid string by repeatedly replacing non-terminals using randomly selected production rules until only terminal symbols remain.
 
@@ -94,10 +94,10 @@ class Grammar {
 
 The `generateString()` method:
 
-- Starts from the start symbol **S**
-- Replaces non-terminals using production rules
-- Continues until no non-terminals remain
-- Returns the generated word
+1) Starts from the start symbol **S**
+2) Replaces non-terminals using production rules
+3) Continues until no non-terminals remain
+4) Returns the generated word
 
 ---
 
@@ -107,13 +107,13 @@ The `FiniteAutomaton` class represents the automaton derived from the grammar.
 
 It contains:
 
-- **Q** – set of states
-- **Σ** – alphabet
-- **δ** – transition function
-- **q₀** – start state
-- **F** – final states
+1) **Q** – set of states
+2) **Σ** – alphabet
+3) **δ** – transition function
+4) **q₀** – start state
+5) **F** – final states
 
-The constructor converts grammar productions into transitions.
+The constructor converts grammar productions into transitions. Later the stringBelongToLanguage method checks if the input is valid according to the rules from grammar.
 
 ### Simplified Structure
 ```
@@ -131,16 +131,16 @@ class FiniteAutomaton {
 
 The method:
 
-- Starts from **q₀**
-- Processes each input symbol
-- Follows transitions
-- Accepts the string if the final state is reached
+1) Starts from **q₀**
+2) Processes each input symbol
+3) Follows transitions
+4) Accepts the string if the final state is reached
 
 ---
 
 ## Main Class
 
-The `Main` class initializes the grammar and automaton, generates example strings, and checks user input.
+The `Main` class initializes the grammar and automaton, generates example strings, and checks user input. I used random to generate string based on the rules based in the grammar in HashMaps above. To check the validity of the input it uses FiniteAutomation object, that gets grammar object.
 ```
 public static void main(String[] args) {
 
@@ -159,17 +159,17 @@ public static void main(String[] args) {
 
 The program successfully:
 
-- Generates valid strings from the grammar
-- Converts the grammar into a finite automaton
-- Validates strings using state transitions
+1) Generates valid strings from the grammar
+2) Converts the grammar into a finite automaton
+3) Validates strings using state transitions
 
 ### Example Generated Strings
 
-- `abcf`
-- `aaabdf`
-- `fbbf`
-- `abdf`
-- `aabcf`
+1) `abcf`
+2) `aaabdf`
+3) `fbbf`
+4) `abdf`
+5) `aabcf`
 
 ### Example Validation
 
