@@ -70,14 +70,10 @@ This grammar is a **right-linear grammar**, therefore it is a **regular grammar*
 
 ### Grammar Class
 
-The `Grammar` class models the formal grammar using sets and maps. It stores:
+The `Grammar` class models a formal grammar by using appropriate data structures such as sets and maps to clearly represent its mathematical components. It stores the set of non-terminals (Vₙ), the set of terminals (Vₜ), the production rules (P) organized in a map structure, and the start symbol (S). This structure closely follows the formal definition of a grammar G = (Vₙ, Vₜ, P, S), making the implementation consistent with the theoretical model.
 
-1) Non-terminals
-2) Terminals
-3) Production rules
-4) Start symbol
+In addition to storing the grammar components, the class provides functionality for generating valid strings that belong to the language. The `generateString()` method begins with the start symbol and repeatedly replaces non-terminal symbols using randomly selected production rules. This process continues step by step until no non-terminals remain in the string, meaning that the result contains only terminal symbols. The final output is therefore a syntactically valid word generated according to the defined grammar.
 
-It also includes a method that generates a valid string by repeatedly replacing non-terminals using randomly selected production rules until only terminal symbols remain.
 
 ### Simplified Structure
 ```
