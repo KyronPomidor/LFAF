@@ -28,5 +28,6 @@ public class Main {
         String toCheck = input.nextLine();
         System.out.println(toCheck);
         System.out.println(fa.stringBelongToLanguage(toCheck));
+        input.close();
     }
 }
