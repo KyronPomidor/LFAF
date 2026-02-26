@@ -28,6 +28,7 @@ public class Main {
         String toCheck = input.nextLine();
         System.out.println(toCheck);
         System.out.println(fa.stringBelongToLanguage(toCheck));
+        System.out.println(grammar.classifyGrammar());
         input.close();
     }
 }
