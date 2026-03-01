@@ -105,10 +105,10 @@ The implementation is organized in a single file `FiniteAutomatonApp.java` conta
 
 The `FAProcessor` class encapsulates all finite automaton operations. It stores:
 
-- `states[]` — array of state names
-- `alphabet[]` — input symbols
-- `finalStates` — set of accepting states
-- `nfa` — transition map of the form `Map<String, Map<Character, Set<String>>>`
+1. `states[]` — array of state names
+2. `alphabet[]` — input symbols
+3. `finalStates` — set of accepting states
+4. `nfa` — transition map of the form `Map<String, Map<Character, Set<String>>>`
 
 The NFA is initialized in the `buildNFA()` method using an `addTransition()` helper, which populates the nested map structure.
 
