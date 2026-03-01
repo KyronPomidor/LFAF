@@ -1,9 +1,7 @@
 # Determinism in Finite Automata. Conversion from NDFA to DFA. Chomsky Hierarchy.
 
 **Course:** Formal Languages & Finite Automata  
-**Author:** Cretu Dumitru  
-**Credits:** Vasile Drumea, Irina Cojuhari
-
+**Author:** Kiril Boboc 
 ---
 
 ## Theory
@@ -21,10 +19,10 @@ Automata can therefore be classified as **deterministic (DFA)** or **non-determi
 1. Understand what an automaton is and what it can be used for.
 2. Extend the existing grammar class with a method that classifies a grammar according to the **Chomsky Hierarchy**.
 3. Given a finite automaton definition (per assigned variant), implement the following:
-   - a. Convert a finite automaton to a regular grammar.
-   - b. Determine whether the FA is deterministic or non-deterministic.
-   - c. Convert an NDFA to a DFA using the Subset Construction Algorithm.
-   - d. *(Bonus)* Represent the finite automaton graphically using an external library.
+   a. Convert a finite automaton to a regular grammar.
+   b. Determine whether the FA is deterministic or non-deterministic.
+   c. Convert an NDFA to a DFA using the Subset Construction Algorithm.
+   d. Represent the finite automaton graphically using an external library.
 
 ---
 
@@ -32,11 +30,11 @@ Automata can therefore be classified as **deterministic (DFA)** or **non-determi
 
 The FA used in this lab is defined as:
 
-- **States:** Q = { q0, q1, q2, q3, q4 }
-- **Alphabet:** Σ = { a, b }
-- **Start state:** q0
-- **Final states:** F = { q4 }
-- **Transitions (δ):**
+1. **States:** Q = { q0, q1, q2, q3, q4 }
+2. **Alphabet:** Σ = { a, b }
+3. **Start state:** q0
+4. **Final states:** F = { q4 }
+5. **Transitions (δ):**
 
 | From | Input | To       |
 |------|-------|----------|
