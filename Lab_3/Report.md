@@ -1,7 +1,7 @@
 # Lexical Analysis. Implementing a Lexer / Tokenizer.
 
 **Course:** Formal Languages & Finite Automata  
-**Author:** Cretu Dumitru
+**Author:** Kiril Boboc
 
 ---
 
