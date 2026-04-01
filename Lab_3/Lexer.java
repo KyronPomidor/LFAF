@@ -6,26 +6,25 @@ public class Lexer {
 
     // Token spec: order matters - longer/more specific patterns first
     private static final List<TokenSpec> TOKEN_SPECS = List.of(
-            new TokenSpec(TokenType.STRING,  "\"[^\"]*\""),
-            new TokenSpec(TokenType.NUMBER,  "\\d+"),
-            new TokenSpec(null,              "--[^\n]*"),          // comment -> skip
-            new TokenSpec(TokenType.NEQ,     "!="),
-            new TokenSpec(TokenType.EQ,      "=="),
-            new TokenSpec(TokenType.LTE,     "<="),
-            new TokenSpec(TokenType.GTE,     ">="),
-            new TokenSpec(TokenType.LT,      "<"),
-            new TokenSpec(TokenType.GT,      ">"),
-            new TokenSpec(TokenType.ASSIGN,  "="),
-            new TokenSpec(TokenType.PLUS,    "\\+"),
-            new TokenSpec(TokenType.MINUS,   "-"),
-            new TokenSpec(TokenType.STAR,    "\\*"),
-            new TokenSpec(TokenType.SLASH,   "/"),
-            new TokenSpec(TokenType.LPAREN,  "\\("),
-            new TokenSpec(TokenType.RPAREN,  "\\)"),
-            new TokenSpec(TokenType.COMMA,   ","),
-            new TokenSpec(TokenType.DOT,     "\\."),
-            new TokenSpec(TokenType.IDENT,   "[A-Za-z][A-Za-z0-9_]*")
-    );
+            new TokenSpec(TokenType.STRING, "\"[^\"]*\""),
+            new TokenSpec(TokenType.NUMBER, "\\d+"),
+            new TokenSpec(null, "--[^\n]*"), // comment -> skip
+            new TokenSpec(TokenType.NEQ, "!="),
+            new TokenSpec(TokenType.EQ, "=="),
+            new TokenSpec(TokenType.LTE, "<="),
+            new TokenSpec(TokenType.GTE, ">="),
+            new TokenSpec(TokenType.LT, "<"),
+            new TokenSpec(TokenType.GT, ">"),
+            new TokenSpec(TokenType.ASSIGN, "="),
+            new TokenSpec(TokenType.PLUS, "\\+"),
+            new TokenSpec(TokenType.MINUS, "-"),
+            new TokenSpec(TokenType.STAR, "\\*"),
+            new TokenSpec(TokenType.SLASH, "/"),
+            new TokenSpec(TokenType.LPAREN, "\\("),
+            new TokenSpec(TokenType.RPAREN, "\\)"),
+            new TokenSpec(TokenType.COMMA, ","),
+            new TokenSpec(TokenType.DOT, "\\."),
+            new TokenSpec(TokenType.IDENT, "[A-Za-z][A-Za-z0-9_]*"));
 
     private static final Pattern MASTER = buildMaster();
 
@@ -61,7 +60,8 @@ public class Lexer {
             String content = rawLine.substring(i);
 
             // blank / whitespace-only line -> skip (no structural meaning)
-            if (content.isEmpty()) continue;
+            if (content.isEmpty())
+                continue;
 
             // emit INDENT / DEDENT
             int current = indentStack.peek();

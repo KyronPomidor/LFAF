@@ -1,4 +1,3 @@
-
 public class Main {
     public static void main(String[] args) {
         String src = """
@@ -7,7 +6,7 @@ public class Main {
                 -- What?
                 while x > 0
                 \tx = x - 1
-                if(a == 10):
+                if(a == 10)
                 \t print("a == 10 - true")
                 else:
                 \t print("a == 10 - false")
