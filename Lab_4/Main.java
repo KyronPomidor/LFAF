@@ -9,9 +9,9 @@ public class Main {
 
     // --- TOKEN ---
     static class Token {
-        String type;       // "char" or "group"
-        String ch;         // for char tokens
-        String[] alts;     // for group tokens
+        String type; // "char" or "group"
+        String ch; // for char tokens
+        String[] alts; // for group tokens
         String quantifier; // "1", "*", "+", "?", or a number like "2"
 
         Token(String type, String ch, String[] alts, String quantifier) {
@@ -32,8 +32,10 @@ public class Main {
                 // find closing ')'
                 int j = i + 1, depth = 1;
                 while (j < pattern.length() && depth > 0) {
-                    if (pattern.charAt(j) == '(') depth++;
-                    if (pattern.charAt(j) == ')') depth--;
+                    if (pattern.charAt(j) == '(')
+                        depth++;
+                    if (pattern.charAt(j) == ')')
+                        depth--;
                     j++;
                 }
                 String inner = pattern.substring(i + 1, j - 1);
@@ -46,7 +48,7 @@ public class Main {
                         quantifier = String.valueOf(q);
                         j++;
                     } else if (q == '^' && j + 1 < pattern.length()
-                               && Character.isDigit(pattern.charAt(j + 1))) {
+                            && Character.isDigit(pattern.charAt(j + 1))) {
                         quantifier = String.valueOf(pattern.charAt(j + 1));
                         j += 2;
                     }
@@ -66,7 +68,7 @@ public class Main {
                         quantifier = String.valueOf(q);
                         j++;
                     } else if (q == '^' && j + 1 < pattern.length()
-                               && Character.isDigit(pattern.charAt(j + 1))) {
+                            && Character.isDigit(pattern.charAt(j + 1))) {
                         quantifier = String.valueOf(pattern.charAt(j + 1));
                         j += 2;
                     }
@@ -83,10 +85,14 @@ public class Main {
     // --- STEP 2: RESOLVE QUANTIFIER TO COUNT ---
     static int pickCount(String q) {
         switch (q) {
-            case "*": return rand.nextInt(STAR_MAX + 1);
-            case "+": return rand.nextInt(STAR_MAX) + 1;
-            case "?": return rand.nextInt(2);
-            default:  return Integer.parseInt(q);
+            case "*":
+                return rand.nextInt(STAR_MAX + 1);
+            case "+":
+                return rand.nextInt(STAR_MAX) + 1;
+            case "?":
+                return rand.nextInt(2);
+            default:
+                return Integer.parseInt(q);
         }
     }
 
@@ -98,7 +104,8 @@ public class Main {
             int count = pickCount(t.quantifier);
 
             if (t.type.equals("char")) {
-                for (int k = 0; k < count; k++) sb.append(t.ch);
+                for (int k = 0; k < count; k++)
+                    sb.append(t.ch);
             } else {
                 for (int k = 0; k < count; k++) {
                     sb.append(t.alts[rand.nextInt(t.alts.length)]);
@@ -124,7 +131,7 @@ public class Main {
                     case "*" -> "write '" + t.ch + "' 0-" + STAR_MAX + " times (*)";
                     case "+" -> "write '" + t.ch + "' 1-" + STAR_MAX + " times (+)";
                     case "?" -> "write '" + t.ch + "' 0 or 1 times (?)";
-                    default  -> "write '" + t.ch + "' exactly " + t.quantifier + " times";
+                    default -> "write '" + t.ch + "' exactly " + t.quantifier + " times";
                 };
             } else {
                 String opts = String.join(" | ", t.alts);
@@ -134,7 +141,7 @@ public class Main {
                     case "*" -> "pick from (" + opts + ") 0-" + STAR_MAX + " times (*)";
                     case "+" -> "pick from (" + opts + ") 1-" + STAR_MAX + " times (+)";
                     case "?" -> "pick from (" + opts + ") 0 or 1 times (?)";
-                    default  -> "pick from (" + opts + ") exactly " + t.quantifier + " times";
+                    default -> "pick from (" + opts + ") exactly " + t.quantifier + " times";
                 };
             }
 
@@ -145,9 +152,9 @@ public class Main {
     // --- MAIN ---
     public static void main(String[] args) {
         String[] patterns = {
-            "O(P|Q|R)+2(3|4)",
-            "A*B(C|D|E)F(G|H|I)^2",
-            "J+K(L|M|N)*O?(P|Q)^3"
+                "O(P|Q|R)+2(3|4)",
+                "A*B(C|D|E)F(G|H|I)^2",
+                "J+K(L|M|N)*O?(P|Q)^3"
         };
 
         System.out.println("=== Regex String Generator - Variant 3 ===\n");
